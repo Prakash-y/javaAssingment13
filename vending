@@ -1,0 +1,37 @@
+package Day12_Assignment;
+
+	import java.util.Scanner;
+
+	public class VendingMachine 
+	{
+	    public static void main(String[] args) {
+	        
+	        int[] notes = { 1000, 500, 100, 50, 10, 5, 2, 1 };
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Enter the amount to be returned: ");
+	        int amount = scanner.nextInt();
+
+	        int[] counts = new int[notes.length];
+	        int remaining = amount;
+	        for (int i = 0; i < notes.length; i++)
+	        {
+	            counts[i] = remaining / notes[i];
+	            remaining %= notes[i];
+	        }
+	        System.out.printf("The minimum number of notes to be returned is %d:\n", sum(counts));
+	        for (int i = 0; i < notes.length; i++)
+	        {
+	            if (counts[i] > 0) {
+	                System.out.printf("%dx%d Rs note\n", counts[i], notes[i]);
+	            }
+	            }}
+	    private static int sum(int[] array) {
+	        int total = 0;
+	        for (int i = 0; i < array.length; i++) {
+	            total += array[i];
+	        }
+	        return total;
+	    }
+	}
+
+
