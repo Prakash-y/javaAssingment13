@@ -1,0 +1,38 @@
+package Day12_Assignment;
+
+	import java.util.Scanner;
+	public class Temperature
+	{
+	    public static void main(String[] args) 
+	    {
+	        Scanner sc = new Scanner(System.in);
+	        System.out.print("Enter the temperature: ");
+	        double temp = sc.nextDouble();
+	        System.out.print("Enter 'C' for Celsius or 'F' for Fahrenheit: ");
+	        String scale = sc.next();
+	        
+	        double convertedTemp = temperatureConversion(temp, scale);
+	        System.out.println("The converted temperature is: " + convertedTemp);
+	    }
+
+	    public static double temperatureConversion(double temp, String scale) {
+	        double convertedTemp = 0.0;
+	        
+	        if (scale.equalsIgnoreCase("C"))
+	        {
+	            convertedTemp = (temp * 9 / 5) + 32;
+	        }
+	      
+	        else if (scale.equalsIgnoreCase("F"))
+	        {
+	            convertedTemp = (temp - 32) * 5 / 9;
+	        }
+	        
+	        else {
+	            System.out.println("Invalid scale input. Please enter 'C' or 'F'.");
+	        }
+	        return convertedTemp;
+	    }
+	}
+
+
