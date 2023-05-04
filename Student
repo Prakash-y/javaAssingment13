@@ -1,0 +1,62 @@
+package Day12_Assignment;
+import java.util.Scanner;
+public class Student
+{
+        String name;
+        int age;
+        int id;
+
+        public void displayname() {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter your name : ");
+            String name1 = sc.next();
+            System.out.println(name1);
+        }
+        public void age() {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter your age");
+            int age = sc.nextInt();
+            System.out.println(age);
+        }
+        public void id(){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter your id");
+            int id = sc.nextInt();
+            System.out.println(id);
+
+        }
+
+        public void grades() {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter your marks");
+            int marks = sc.nextInt();
+
+            if (marks > 75) 
+            {
+                System.out.println("passed with distinction");
+            } else if (marks > 60 && marks < 75) {
+                System.out.println("passed with first class");
+            } else if (marks > 36 && marks < 60) {
+                System.out.println("passed");
+            } else {
+                System.out.println("failed");
+            }
+        }
+        public static void main(String[] args) {
+
+            Student student = new Student();
+
+            student.name="Prakash";
+
+            student.age=25;
+
+            student.id=18;
+            
+            student.displayname();
+            student.age();
+            student.id();
+            student.grades();
+        }
+    }
+
+
