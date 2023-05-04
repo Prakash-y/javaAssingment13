@@ -1,0 +1,49 @@
+package Day12_Assignment;
+
+public class BankAccount 
+{
+		     private double balance;
+		     private int accountNumber;
+		     
+		     public BankAccount(int accountNumber, double balance) {
+		         this.accountNumber = accountNumber;
+		         this.balance = balance;
+		     }
+		     
+		     public void deposit(double amount) 
+		     {
+		         balance += amount;
+		         System.out.println(amount + " deposited into account " + accountNumber);
+		     }
+		     
+		     public void withdraw(double amount) {
+		         if (balance >= amount) {
+		             balance -= amount;
+		             System.out.println(amount + " withdrawn from account " + accountNumber);
+		         } else {
+		             System.out.println("Insufficient funds in account " + accountNumber);
+		         }
+		     }
+		     
+		     public double getBalance() {
+		         return balance;
+		     }
+		     
+		     public int getAccountNumber() {
+		         return accountNumber;
+		     }
+
+	 public static void main(String[] args) {
+	     BankAccount account1 = new BankAccount(100000, 1000.00);
+	     System.out.println("Account " + account1.getAccountNumber() + " has a balance of $" + account1.getBalance());
+	     
+	     account1.deposit(500.00);
+	     System.out.println("Account " + account1.getAccountNumber() + " has a balance of $" + account1.getBalance());
+	     
+	     account1.withdraw(200.00);
+	     System.out.println("Account " + account1.getAccountNumber() + " has a balance of $" + account1.getBalance());
+	     
+	     account1.withdraw(2000.00);
+	     System.out.println("Account " + account1.getAccountNumber() + " has a balance of $" + account1.getBalance());
+	 }
+}
