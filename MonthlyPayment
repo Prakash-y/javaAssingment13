@@ -1,0 +1,27 @@
+package Day12_Assignment;
+
+public class MonthlyPayment 
+{
+	    public static void main(String[] args) {
+	        
+	        double P = Double.parseDouble(args[0]);
+	        int Y = Integer.parseInt(args[1]);
+	        double R = Double.parseDouble(args[2]);
+
+	        double monthlyPayment = monthlyPayment(P, Y, R);
+	        System.out.println("Monthly payment: " + monthlyPayment);
+	    }
+
+	    public static double monthlyPayment(double P, int Y, double R) {
+	        int n = 12 * Y; 
+	        double r = R / (12 * 100); 
+	        
+	        double numerator = P * r;
+	        double denominator = 1 - Math.pow(1 + r, -n);
+	        double payment = numerator / denominator;
+
+	        return payment;
+	    }
+	}
+
+
