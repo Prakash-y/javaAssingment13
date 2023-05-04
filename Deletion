@@ -1,0 +1,31 @@
+package Day12_Assignment;
+
+import java.util.Arrays;
+
+public class Deletion 
+{
+	    public static void main(String[] args) {
+	        int[] arr = {10, 20, 30, 40, 50};
+	        int position = 2;
+	        
+	        int[] newArr = new int[arr.length -1];
+	        int i = 0, j = 0;
+	        while (i < arr.length) 
+	        {
+	            if (i == position) 
+	            {
+	                j++;
+	            } else 
+	            {
+	                newArr[i-j] = arr[i];
+	            }
+	            i++;
+	        }
+	        
+	        System.out.println("Original Array: " + Arrays.toString(arr));
+	        System.out.println("Position to delete: " + position);
+	        System.out.println("New Array: " + Arrays.toString(newArr));
+	    }
+	}
+
+
