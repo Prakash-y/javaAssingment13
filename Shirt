@@ -1,0 +1,46 @@
+package Day12_Assignment;
+
+public class Shirt 
+{
+	    private String size;
+	    private String color;
+	    private double price;
+
+	    public Shirt(String size, String color, double price) 
+	    {
+	        this.size = size;
+	        this.color = color;
+	        this.price = price;
+	    }
+
+	    public double calculateDiscount() 
+	    {
+	        double discount = 0.0;
+	        if (size.equals("S")) 
+	        {
+	            discount = 0.1 * price;
+	        } else if (size.equals("M")) 
+	        {
+	            discount = 0.15 * price;
+	        } else if (size.equals("L")) 
+	        {
+	            discount = 0.2 * price;
+	        }
+	        return discount;
+	    }
+
+	    public void printInfo() {
+	        System.out.println("Size: " + size);
+	        System.out.println("Color: " + color);
+	        double discountedPrice = price - calculateDiscount();
+	        System.out.println("Discounted price: " + discountedPrice);
+	    }
+
+	    public static void main(String[] args) {
+	        Shirt myShirt = new Shirt("M", "Blue", 25.0);
+	        myShirt.printInfo();
+	    }
+	}
+
+
+
