@@ -1,0 +1,33 @@
+package Day12_Assignment;
+
+public class Book 
+{
+	    private String title;
+	    private String author;
+	    private int numPages;
+
+	    public Book(String title, String author, int numPages) {
+	        this.title = title;
+	        this.author = author;
+	        this.numPages = numPages;
+	    }
+
+	    public double calculatePrice() {
+	        double price = 0.10 * numPages;
+	        return price;
+	    }
+
+	    public void printInfo() {
+	        System.out.println("Title: " + title);
+	        System.out.println("Author: " + author);
+	        System.out.println("Number of pages: " + numPages);
+	    }
+
+	    public static void main(String[] args) {
+	        Book mb = new Book("The Great ", "F. Scott Fitzgerald", 180);
+	        mb.printInfo();
+	        System.out.println("Price: " + mb.calculatePrice());
+	    }
+	}
+
+
